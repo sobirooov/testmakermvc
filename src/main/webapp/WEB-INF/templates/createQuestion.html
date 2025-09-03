@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Question</title>
+</head>
+<body>
+    <form th:object="${createQuestion}" method="post" th:action="@{/submit}">
+        <textarea name="question" rows="10" cols="50"  th:field="*{text}" placeholder="Savolni yozing..."></textarea>
+        <p></p>
+
+        <input type="checkbox" id="answer0" name="answer" th:field="*{answers[0].correct}"/>
+        <label for="answer0">A)</label>
+        <input type="text" name="answer0" th:value="*{answers[0].text}"><br>
+
+        <input type="checkbox" id="answer1" name="answer" th:value="*{answers[1].correct}" >
+        <label for="answer1">B)</label>
+        <input type="text" name="answer1" th:value="*{answers[1].text}" ><br>
+
+        <input type="checkbox" id="answer2" name="answer" th:value="*{answers[2].correct}" >
+        <label for="answer2">C)</label>
+        <input type="text" name="answer2" th:value="*{answers[2].text}"><br>
+
+        <input type="checkbox" id="answer3" name="answer" th:value="*{answers[3].correct}" >
+        <label for="answer3">D)</label>
+        <input type="text" name="answer3" th:value="*{answers[3].text}"><br><br>
+
+        <button type="submit">Yuborish</button>
+    </form>
+<p></p>
+<a th:href="@{/}"><h3>Orqaga</h3></a>
+</body>
+</html>
