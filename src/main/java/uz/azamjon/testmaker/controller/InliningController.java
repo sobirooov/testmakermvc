@@ -8,15 +8,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import uz.azamjon.testmaker.model.Answer;
 import uz.azamjon.testmaker.model.Question;
+import uz.azamjon.testmaker.service.QuestionService;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 @Controller
 public class InliningController {
+    private final QuestionService questionService;
+
+    public InliningController(QuestionService questionService) {
+        this.questionService = questionService;
+    }
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(){
-
         return "index";
     }
 
@@ -32,9 +38,15 @@ public class InliningController {
         model.addAttribute("createQuestion", question);
         return "createQuestion";
     }
+    @GetMapping("/questions")
+    public String listTest(Model model){
+        model.addAttribute("questions", questionService.getQuestions());
+        return "questions";
+    }
 
     @PostMapping("/submit")
     public String submit(Question question){
+        questionService.addQuestion(question);
         System.out.println(question);
         return "index";
     }

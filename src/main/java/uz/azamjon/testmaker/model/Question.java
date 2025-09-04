@@ -1,10 +1,10 @@
 package uz.azamjon.testmaker.model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Question {
     private String text;
-    private ArrayList<Answer> answers;
+    private List<Answer> answers;
 
     public String getText() {
         return text;
@@ -14,11 +14,11 @@ public class Question {
         this.text = text;
     }
 
-    public ArrayList<Answer> getAnswers() {
+    public List<Answer> getAnswers() {
         return answers;
     }
 
-    public void setAnswers(ArrayList<Answer> answers) {
+    public void setAnswers(List<Answer> answers) {
         this.answers = answers;
     }
 

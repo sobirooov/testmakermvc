@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questions</title>
+</head>
+<body>
+<h2>list of questions</h2>
+<ol type="1">
+    <div th:each="question : ${questions}">
+        <li>
+            <span th:text="${question.text}"></span>
+                <ol type="a" >
+                    <div th:each="answer : ${question.getAnswers()}">
+
+                     <li th:id="${answer.text}" th:text="${answer.text}"></li>
+
+                     </div>
+                </ol>
+        </li>
+    </div>
+</ol>
+<a class="button-back" th:href="@{/}"><h3>Orqaga</h3></a>
+</body>
+</html>
