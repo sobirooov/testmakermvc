@@ -6,6 +6,7 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/createQuestion.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/questions.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/test.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates" />
       </map>
     </option>
   </component>

@@ -10,14 +10,16 @@ import uz.azamjon.testmaker.model.Answer;
 import uz.azamjon.testmaker.model.Question;
 import uz.azamjon.testmaker.service.QuestionService;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
-public class InliningController {
+public class TestController {
     private final QuestionService questionService;
 
-    public InliningController(QuestionService questionService) {
+    public TestController(QuestionService questionService) {
         this.questionService = questionService;
     }
 
@@ -38,10 +40,31 @@ public class InliningController {
         model.addAttribute("createQuestion", question);
         return "createQuestion";
     }
+
     @GetMapping("/questions")
     public String listTest(Model model){
         model.addAttribute("questions", questionService.getQuestions());
         return "questions";
+    }
+
+    @GetMapping("/test")
+    public String test(HttpSession session, Model model){
+        List<Question> questions = (List<Question>) session.getAttribute("myQuestions");
+        Integer currentIndex = (Integer) session.getAttribute("currentQuestion");
+        if (currentIndex == null){
+            currentIndex = 0;
+        } else {
+            currentIndex++;
+        }
+
+        if(questions==null){
+            questions = questionService.getRandomQuestions();
+            session.setAttribute("myQuestions", questions);
+        }
+
+        session.setAttribute("currentQuestion", currentIndex);
+        model.addAttribute("question", questions.get(currentIndex));
+        return "test";
     }
 
     @PostMapping("/submit")

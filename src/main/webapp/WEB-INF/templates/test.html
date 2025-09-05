@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <style>
+        .button {
+            font: bold 11px Arial;
+            text-decoration: none;
+            background-color: #EEEEEE;
+            color: #333333;
+            padding: 2px 6px 2px 6px;
+            border-top: 1px solid #CCCCCC;
+            border-right: 1px solid #333333;
+            border-bottom: 1px solid #333333;
+            border-left: 1px solid #CCCCCC;
+        }
+        a {
+            display: block;
+            height: 20px;
+            width: auto;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<h2>Test</h2>
+    <ol type="1">
+        <li>
+            <span th:text="${question.text}"></span>
+            <ol type="a">
+                <div th:each="answer : ${question.getAnswers()}">
+
+                    <li th:id="${answer.text}" th:text="${answer.text}"></li>
+
+                </div>
+            </ol>
+        </li>
+    </ol>
+<a th:href="@{/test}"><h3>Keyingisi</h3></a>
+<a th:href="@{/}"><h3>Orqaga</h3></a>
+</body>
+</html>
