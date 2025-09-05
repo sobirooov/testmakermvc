@@ -46,6 +46,10 @@ public class TestController {
         model.addAttribute("questions", questionService.getQuestions());
         return "questions";
     }
+    @GetMapping("/result")
+    public String resultTest(Model model){
+        return "result";
+    }
 
     @GetMapping("/test")
     public String test(HttpSession session, Model model){
@@ -60,6 +64,11 @@ public class TestController {
         if(questions==null){
             questions = questionService.getRandomQuestions();
             session.setAttribute("myQuestions", questions);
+        }
+
+        boolean isLastQuestion = currentIndex == questions.size();
+        if (isLastQuestion){
+            return "redirect:/result";
         }
 
         session.setAttribute("currentQuestion", currentIndex);
