@@ -5,6 +5,22 @@
     <meta charset="UTF-8">
     <title>Test Topshirish</title>
 
+    <script>
+        function goToTest() {
+            let base = window.location.origin;
+            let path = "/testmakermvc/test";
+
+            let checked = document.querySelector('input[name="user_response"]:checked');
+            let userResponse = checked ? document.querySelector('input[name="user_response"]:checked').value : 'NONE';
+
+            let url = base + path + '?userResponse=' + userResponse;
+
+            // Navigate to it
+            window.location.href = url;
+        }
+    </script>
+
+
 </head>
 <body>
     <div class="wrapper">
@@ -12,7 +28,7 @@
         <span th:text="${question.text}"></span>
             <div class="answer-box" th:each="answer : ${question.getAnswers()}">
                 <label class="radio-container">
-                    <input type="radio" th:name="${'question_' + question.text}"
+                    <input type="radio" th:name="user_response"
                            th:value="${answer.text}"/>
                     <span class="custom-radio"></span>
                     <span class="answer-text" th:text="${answer.text}"></span>
@@ -20,7 +36,7 @@
             </div>
         <div class="bottom-button-box">
             <a th:href="@{/}">Orqaga</a>
-            <a th:href="@{/test}">Keyingisi</a>
+            <a href="#" onclick='goToTest()'>Keyingisi</a>
         </div>
     </div>
 </body>

@@ -2,10 +2,7 @@ package uz.azamjon.testmaker.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import uz.azamjon.testmaker.model.Answer;
 import uz.azamjon.testmaker.model.Question;
 import uz.azamjon.testmaker.service.QuestionService;
@@ -52,7 +49,10 @@ public class TestController {
     }
 
     @GetMapping("/test")
-    public String test(HttpSession session, Model model){
+    public String test(HttpSession session,
+                       Model model,
+                       @RequestParam(required = false)
+                       String userResponse){
         List<Question> questions = (List<Question>) session.getAttribute("myQuestions");
         Integer currentIndex = (Integer) session.getAttribute("currentQuestion");
         if (currentIndex == null){
