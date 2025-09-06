@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<link th:href="@{/style/index.css}" rel="stylesheet"/>
 <head>
     <title>Home</title>
 </head>
-<body class="wrapper">
-<a th:href="@{/questions}"><h3>Testlar Ro'yxati</h3></a>
-<a th:href="@{/createQuestion}"><h3>Test Qo'shish</h3></a>
-<a th:href="@{/test}"><h3>Testni Boshlash</h3></a>
+<body>
+    <div class="wrapper">
+        <div class="panel">
+            <a th:href="@{/questions}">Testlar Ro'yxati</a>
+            <a th:href="@{/createQuestion}">Test Qo'shish</a>
+            <a th:href="@{/test}">Testni Boshlash</a>
+        </div>
+    </div>
 </body>
 </html>
