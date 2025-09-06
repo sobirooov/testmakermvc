@@ -1,47 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+<link th:href="@{/style/main.css}" rel="stylesheet" />
 <head>
     <meta charset="UTF-8">
-    <title>Test</title>
-    <style>
-        .button {
-            font: bold 11px Arial;
-            text-decoration: none;
-            background-color: #EEEEEE;
-            color: #333333;
-            padding: 2px 6px 2px 6px;
-            border-top: 1px solid #CCCCCC;
-            border-right: 1px solid #333333;
-            border-bottom: 1px solid #333333;
-            border-left: 1px solid #CCCCCC;
-        }
-        a {
-            display: block;
-            height: 20px;
-            width: auto;
-            border: 1px solid #000;
-        }
-    </style>
+    <title>Test Topshirish</title>
+
 </head>
 <body>
-<h2>Test</h2>
-<ol type="1">
-    <li>
+    <div class="wrapper">
+        <h2>Test Topshirish</h2>
         <span th:text="${question.text}"></span>
-        <ol type="a">
-            <div th:each="answer : ${question.getAnswers()}">
-                <li th:id="${answer.text}">
-                    <label>
-                        <input type="radio" th:name="${'question_' + question.text}"
-                               th:value="${answer.text}"/>
-                        <span th:text="${answer.text}"></span>
-                    </label>
-                </li>
+            <div class="answer-box" th:each="answer : ${question.getAnswers()}">
+                <label class="radio-container">
+                    <input type="radio" th:name="${'question_' + question.text}"
+                           th:value="${answer.text}"/>
+                    <span class="custom-radio"></span>
+                    <span class="answer-text" th:text="${answer.text}"></span>
+                </label>
             </div>
-        </ol>
-    </li>
-</ol>
-<a th:href="@{/test}"><h3>Keyingisi</h3></a>
-<a th:href="@{/}"><h3>Orqaga</h3></a>
+        <div class="bottom-button-box">
+            <a th:href="@{/}">Orqaga</a>
+            <a th:href="@{/test}">Keyingisi</a>
+        </div>
+    </div>
 </body>
 </html>
