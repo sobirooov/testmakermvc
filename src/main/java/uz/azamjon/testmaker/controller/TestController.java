@@ -44,8 +44,23 @@ public class TestController {
         return "questions";
     }
     @GetMapping("/result")
-    public String resultTest(Model model){
+    public String resultTest(HttpSession session, Model model){
+        List<Question> questions = (List<Question>) session.getAttribute("myQuestions");
+        Integer correntCounter = (Integer) session.getAttribute("correntCounter");
+        int total = questions.size();
+        int wrong = total - correntCounter;
+        model.addAttribute("total", total);
+        model.addAttribute("correct", correntCounter);
+        model.addAttribute("wrong", wrong);
         return "result";
+    }
+    @GetMapping("/reset")
+    public String resetTest(HttpSession session){
+        session.setAttribute("myQuestions", null);
+        session.setAttribute("currentQuestion", null);
+        session.setAttribute("correntCounter", null);
+        System.out.println("reset ishladi");
+        return "redirect:/test";
     }
 
     @GetMapping("/test")
@@ -64,6 +79,21 @@ public class TestController {
         if(questions==null){
             questions = questionService.getRandomQuestions();
             session.setAttribute("myQuestions", questions);
+        }
+        if (userResponse!=null){
+            int previosIndex = currentIndex - 1;
+            Question question = questions.get(previosIndex);
+            for (int i=0; i<question.getAnswers().size(); i++){
+                Answer answer = question.getAnswers().get(i);
+                Integer correntCounter = (Integer) session.getAttribute("correntCounter");
+                if (correntCounter==null){
+                    correntCounter = 0;
+                }
+                if (answer.getText().equals(userResponse) && answer.isCorrect()){
+                    correntCounter++;
+                }
+                session.setAttribute("correntCounter", correntCounter);
+            }
         }
 
         boolean isLastQuestion = currentIndex == questions.size();

@@ -6,8 +6,15 @@
 </head>
 <body>
 <h2>Sizning Natijangiz</h2>
+<div >
+    <p>Jami savollar: <span th:text="${total}"></span></p>
+    <p>To‘g‘ri javoblar: <span th:text="${correct}"></span></p>
+    <p>Noto‘g‘ri javoblar: <span th:text="${wrong}"></span></p>
+</div>
 
-
-<a th:href="@{/}"><h3>Orqaga</h3></a>
+<div class="button-back">
+    <a th:href="@{/}">Orqaga</a>
+    <a th:href="@{/reset}">Qayta Topshirish</a>
+</div>
 </body>
 </html>

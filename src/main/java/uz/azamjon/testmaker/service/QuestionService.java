@@ -13,7 +13,6 @@ import java.util.List;
 public class QuestionService {
 
    List<Question> questions = new ArrayList<>();
-   List<Question> randomQuestions = new ArrayList<>(questions);
 
     {
         Question q1 = new Question();
@@ -27,10 +26,10 @@ public class QuestionService {
 
         Question q2 = new Question();
         q2.setText("Question 2");
-        Answer a5 = new Answer("A javob", false);
+        Answer a5 = new Answer("A javob", true);
         Answer a6 = new Answer("B javob", false);
         Answer a7 = new Answer("C javob", false);
-        Answer a8 = new Answer("D javob", true);
+        Answer a8 = new Answer("D javob", false);
         q2.setAnswers(List.of(a5, a6, a7, a8));
         questions.add(q2);
 
