@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link th:href="@{/style/listQuestion.css}" rel="stylesheet"/>
 <head>
     <meta charset="UTF-8">
     <title>Questions</title>
 </head>
 <body>
-<h2>Test Savollar</h2>
-<ol type="1">
-    <div th:each="question : ${questions}">
-        <li>
-            <span th:text="${question.text}"></span>
-                <ol type="a" >
-                    <div th:each="answer : ${question.getAnswers()}">
+    <div class="wrapper">
+        <div class="panel">
+            <h2 class="panel-title">Test Savollar</h2>
+            <ol class="question-list" type="1">
+                <div class="test" th:each="question : ${questions}">
+                    <li class="question-item">
+                        <span class="question-text" th:text="${question.text}"></span>
+                        <ol class="answer-list" type="a" >
+                            <div th:each="answer : ${question.getAnswers()}">
 
-                     <li th:id="${answer.text}" th:text="${answer.text}"></li>
-
-                     </div>
-                </ol>
-        </li>
+                                <li  class="answer-item"
+                                     th:id="${answer.text}"
+                                     th:text="${answer.text}">
+                                </li>
+                            </div>
+                        </ol>
+                    </li>
+                </div>
+            </ol>
+            <a class="button-back" th:href="@{/}">Orqaga</a>
+        </div>
     </div>
-</ol>
-<a class="button-back" th:href="@{/}"><h3>Orqaga</h3></a>
 </body>
 </html>
