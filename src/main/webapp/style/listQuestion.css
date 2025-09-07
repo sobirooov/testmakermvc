@@ -21,6 +21,14 @@ html,
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 600px;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.question-list-wrapper {
+    flex: 1;                  /* bo‘sh joyni egallaydi */
+    overflow-y: auto;         /* faqat shu joy scroll bo‘ladi */
+    margin-bottom: 15px;      /* pastki tugma bilan oraliq */
 }
 a {
     width: 50%;
@@ -37,14 +45,6 @@ a {
     background: #0056b3;
 }
 
-
-.panel {
-    background: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 600px;
-}
 
 .panel-title {
     text-align: center;
@@ -98,4 +98,7 @@ a {
 
 .button-back:hover {
     background: #0056b3;
+}
+.panel-footer {
+    text-align: center;       /* tugmani markazga olish */
 }
