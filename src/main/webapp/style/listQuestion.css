@@ -10,13 +10,14 @@ html,
     height: 100%;
 }
 .wrapper{
+    height: 650px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: white;
 }
 .panel {
-    background: #fff;
+    background: #f9f9f9;
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -53,7 +54,7 @@ a {
 }
 
 .question-list {
-    padding-left: 20px;
+    padding-left: 30px;
 }
 
 .question-item {
