@@ -1,31 +1,43 @@
 <html xmlns:th="http://www.thymeleaf.org">
+<link th:href="@{/style/createQuestion.css}" rel="stylesheet"/>
 <head>
     <title>Add Question</title>
 </head>
 <body>
-    <form th:object="${createQuestion}" method="post" th:action="@{/submit}">
-        <textarea name="question" rows="10" cols="50"  th:field="*{text}" placeholder="Savolni yozing..."></textarea>
-        <p></p>
+  <div class="wrapper">
+      <div class="panel">
+          <h2 class="panel-title">Savol qo‘shish</h2>
+              <form class="question-form" th:object="${createQuestion}" method="post" th:action="@{/submit}">
+                  <textarea class="question-textarea" name="question" rows="10" cols="50"  th:field="*{text}" placeholder="Savolni yozing..."></textarea>
 
-        <input class="input" type="checkbox" id="answer0" name="answer" th:field="*{answers[0].correct}"/>
-        <label for="answer0">A)</label>
-        <input type="text" name="answer0" th:field="*{answers[0].text}"><br>
+                  <div class="answer-item">
+                      <input type="checkbox" id="answer0" name="answer" th:field="*{answers[0].correct}"/>
+                      <label for="answer0">A)</label>
+                      <input type="text" name="answer0" th:field="*{answers[0].text}" placeholder="Javob varianti">
+                  </div>
 
-        <input class="input" type="checkbox" id="answer1" name="answer" th:field="*{answers[1].correct}" >
-        <label for="answer1">B)</label>
-        <input type="text" name="answer1" th:field="*{answers[1].text}" ><br>
+                  <div class="answer-item">
+                      <input type="checkbox" id="answer1" th:field="*{answers[1].correct}"/>
+                      <label for="answer1">B)</label>
+                      <input type="text" th:field="*{answers[1].text}" placeholder="Javob varianti">
+                  </div>
 
-        <input class="input" type="checkbox" id="answer2" name="answer" th:field="*{answers[2].correct}" >
-        <label for="answer2">C)</label>
-        <input type="text" name="answer2" th:field="*{answers[2].text}"><br>
+                  <div class="answer-item">
+                      <input type="checkbox" id="answer2" th:field="*{answers[2].correct}"/>
+                      <label for="answer2">C)</label>
+                      <input type="text" th:field="*{answers[2].text}" placeholder="Javob varianti">
+                  </div>
 
-        <input class="input" type="checkbox" id="answer3" name="answer" th:field="*{answers[3].correct}" >
-        <label for="answer3">D)</label>
-        <input type="text" name="answer3" th:field="*{answers[3].text}"><br><br>
+                  <div class="answer-item">
+                      <input type="checkbox" id="answer3" th:field="*{answers[3].correct}"/>
+                      <label for="answer3">D)</label>
+                      <input type="text" th:field="*{answers[3].text}" placeholder="Javob varianti">
+                  </div>
 
-        <button class="button" type="submit">Yuborish</button>
-    </form>
-<p></p>
-<a class="button-back" th:href="@{/}">Orqaga</a>
+                  <button class="button" type="submit">Yuborish</button>
+              </form>
+              <a class="button-back" th:href="@{/}">Orqaga</a>
+      </div>
+  </div>
 </body>
 </html>
