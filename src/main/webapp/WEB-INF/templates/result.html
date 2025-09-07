@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link th:href="@{/style/result.css}" rel="stylesheet"/>
 <head>
     <meta charset="UTF-8">
     <title>Result</title>
 </head>
 <body>
-<h2>Sizning Natijangiz</h2>
-<div >
-    <p>Jami savollar: <span th:text="${total}"></span></p>
-    <p>To‘g‘ri javoblar: <span th:text="${correct}"></span></p>
-    <p>Noto‘g‘ri javoblar: <span th:text="${wrong}"></span></p>
-</div>
+    <div class="wrapper">
+        <div class="result-panel">
+            <h2 class="result-title">Sizning Natijangiz</h2>
+            <div class="result-stats">
+                <p>Jami savollar: <span th:text="${total}"></span></p>
+                <p>To‘g‘ri javoblar: <span th:text="${correct}"></span></p>
+                <p>Noto‘g‘ri javoblar: <span th:text="${wrong}"></span></p>
+            </div>
 
-<div class="button-back">
-    <a th:href="@{/}">Orqaga</a>
-    <a th:href="@{/reset}">Qayta Topshirish</a>
-</div>
+            <div class="result-actions">
+                <a class="btn" th:href="@{/}">Orqaga</a>
+                <a class="btn primary" th:href="@{/reset}">Qayta Topshirish</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
