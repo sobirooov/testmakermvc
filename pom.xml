@@ -40,6 +40,19 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+      <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jdbc -->
+      <dependency>
+          <groupId>org.springframework.data</groupId>
+          <artifactId>spring-data-jdbc</artifactId>
+          <version>3.2.4</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+      <dependency>
+          <groupId>org.postgresql</groupId>
+          <artifactId>postgresql</artifactId>
+          <version>42.7.7</version>
+      </dependency>
   </dependencies>
   <build>
     <finalName>testmakermvc</finalName>

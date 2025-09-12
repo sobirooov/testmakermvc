@@ -3,6 +3,8 @@ package uz.azamjon.testmaker.model;
 import java.util.ArrayList;
 
 public class Answer {
+    private Integer id;
+    private Integer questionid;
     private String text;
     private boolean isCorrect;
 
@@ -29,9 +31,25 @@ public class Answer {
         isCorrect = correct;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public Integer getQuestionid() {
+        return questionid;
+    }
+    public void setQuestionid(Integer questionid) {
+        this.questionid = questionid;
+    }
+
     @Override
     public String toString() {
         return "Answer{" +
+                "id='" + id + '\'' +
+                "questionId='" + questionid + '\'' +
                 "text='" + text + '\'' +
                 ", isCorrect=" + isCorrect +
                 '}';
