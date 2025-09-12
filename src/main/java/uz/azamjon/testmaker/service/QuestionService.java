@@ -25,7 +25,7 @@ public class QuestionService {
         questions.add(q1);
         //2-savol
         Question q2 = new Question();
-        q2.setText("Java'da kalit so‘zlardan qaysi biri obyekt yaratish uchun ishlatiladi?");
+        q2.setText("Javada kalit so‘zlardan qaysi biri obyekt yaratish uchun ishlatiladi?");
         Answer a5 = new Answer("create", false);
         Answer a6 = new Answer("build", false);
         Answer a7 = new Answer("new", true);
@@ -44,8 +44,8 @@ public class QuestionService {
 
         // 4-savol
         Question q4 = new Question();
-        q4.setText("Java'da 'int' tipi necha bayt joy egallaydi?");
-        Answer a13 = new Answer("2 bayt", false);
+        q4.setText("Javada 'int' tipi necha bayt joy egallaydi?");
+            Answer a13 = new Answer("2 bayt", false);
         Answer a14 = new Answer("4 bayt", true);
         Answer a15 = new Answer("8 bayt", false);
         Answer a16 = new Answer("1 bayt", false);
@@ -96,9 +96,9 @@ public class QuestionService {
         Question q9 = new Question();
         q9.setText("Java'da String obyektlari qanday yaratiladi?");
         Answer a33 = new Answer("String s = 'text';", false);
-        Answer a34 = new Answer("String s = new String(\"text\");", true);
+        Answer a34 = new Answer("String s = new String(\"text\")", true);
         Answer a35 = new Answer("String s = text;", false);
-        Answer a36 = new Answer("String s = String(text);", false);
+        Answer a36 = new Answer("String s = String(text)", false);
         q9.setAnswers(List.of(a33, a34, a35, a36));
         questions.add(q9);
 
