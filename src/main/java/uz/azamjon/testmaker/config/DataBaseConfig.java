@@ -19,8 +19,6 @@ public class DataBaseConfig {
     @Bean
     public DataSource dataSource() {
         String url = "jdbc:postgresql://localhost:5432/testmaker";
-        System.out.println("username=" + username);
-        System.out.println("password=" + password);
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
         dataSource.setUrl(url);

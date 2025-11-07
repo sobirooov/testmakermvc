@@ -10,4 +10,10 @@ http://javazam.uz:8080/testmakermvc/
 ## Muallif
 Azamjon Sobirov
 
+## 🖼 Dastur oynasi
+
+![main page](images/allTest.png)
+![add page](images/addTest.png)
+![test page](images/test.png)
+![result page](images/result.png)
 

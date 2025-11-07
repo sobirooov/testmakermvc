@@ -1,7 +1,5 @@
 package uz.azamjon.testmaker.model;
 
-import java.util.ArrayList;
-
 public class Answer {
     private Integer id;
     private Integer questionid;
