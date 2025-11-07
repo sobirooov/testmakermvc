@@ -1,5 +1,5 @@
 # testmakermvc project
-**TestMakerMVC** — bu Java va Spring Boot MVC yordamida ishlab chiqilgan veb-ilova bo‘lib, foydalanuvchilarga testlar topshirish, savollar qo‘shish va test natijalarni ko'rish imkonini beradi.  
+**TestMakerMVC** — bu Java va Spring MVC yordamida ishlab chiqilgan veb-ilova bo‘lib, foydalanuvchilarga testlar topshirish, savollar qo‘shish va test natijalarni ko'rish imkonini beradi.  
 
 Loyiha PostgreSQL bilan ishlaydi va MVC arxitekturasiga asoslangan.
 
